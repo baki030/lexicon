@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f5f5f5;
+            font-size: 13px;
+        }
+        .container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .section-title {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            padding-bottom: 3px;
+            border-bottom: none;
+            font-weight: 600;
+        }
+        .section-links {
+            margin-left: 10px;
+            border-left: 1px solid #666;
+            padding-left: 10px;
+        }
+        .section-links a {
+            color: #0066cc;
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            margin: 2px 0;
+            padding: 1px 0;
+            font-size: 12px;
+            position: relative;
+        }
+        .section-links a:before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 5px;
+            height: 1px;
+            border-top: 1px solid #666;
+        }
+        .section-links a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 1.4em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .back-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">Back to Main Page</a>
+        <h1>Trading ATM hub:</h1>
+        
+        <div class="section">
+            <h2 class="section-title">Trading Platforms</h2>
+            <div class="section-links">
+                <a href="https://www.tradingview.com/" target="_blank">TradingView</a>
+                <a href="https://www.metatrader5.com/" target="_blank">MetaTrader 5</a>
+                <a href="https://ctrader.com/" target="_blank">cTrader</a>
+                <a href="https://www.matchtrader.com/" target="_blank">MatchTrader</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">ATMs</h2>
+            <div class="section-links">
+                <a href="https://fundingpips.com/" target="_blank">FundingPips</a>
+                <a href="https://www.vantagemarkets.com/" target="_blank">Vantage</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

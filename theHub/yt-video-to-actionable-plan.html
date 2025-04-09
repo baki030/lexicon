@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video to Actionable Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+        .prompt-text {
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 20px;
+            line-height: 1.5;
+            text-indent: 0;
+            padding-left: 0;
+        }
+        .copy-button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .copy-button:hover {
+            background-color: #0052a3;
+        }
+        .back-link {
+            color: #0066cc;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .section-links a {
+            color: #0066cc;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2px 10px 2px 0;
+            padding: 3px 0;
+            font-size: 12px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <a href="ai_prompts.html" class="back-link">← Back to AI Prompts</a>
+    <h1>YouTube Video to Actionable Plan</h1>
+    
+    <button class="copy-button" onclick="copyPrompt()">Copy Prompt</button>
+    <div class="prompt-text" id="promptText">
+You are now an Implementation Extractor. Your only job is to analyze this YouTube transcript and extract PURELY ACTIONABLE steps, completely ignoring all theory, background information, stories, or fluff.
+
+Follow these exact rules:
+
+- Only include specific, concrete actions that someone can execute immediately
+- Format each step as a numbered item starting with an action verb
+- Include specific numbers, measurements, or timeframes when mentioned
+- Remove all explanations of "why" - focus only on "what" and "how"
+- If any step is vague, either make it specific or remove it
+- Maximum of 10 steps - prioritize the most immediately practical & actionable items
+- Focus on steps that can be implemented today
+
+Format your response as:
+
+EXECUTION STEPS:
+- Action step 1
+- Action step 2
+- etc.
+
+KEY METRICS (if any mentioned):
+- Metric 1: [Value]
+- Metric 2: [Value]
+
+REQUIRED TOOLS/RESOURCES:
+- Tool/Resource 1
+- Tool/Resource 2
+
+{Transcript goes here}</div>
+
+    <script>
+        function copyPrompt() {
+            const promptText = document.getElementById('promptText').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                const button = document.querySelector('.copy-button');
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html> 
